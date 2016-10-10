@@ -11,11 +11,11 @@ $project = ls project.json -recurse | `
         $_.Directory.Name -eq $projectName
     }
 
-Write-Host Write-Host -ForegroundColor Cyan "dotnet pack $project"
+Write-Host -ForegroundColor Cyan "dotnet pack $project"
 
 if ($versionSuffix -eq $null) {
-    dotnet pack $project -c $configurtion -o $outputPath
+    dotnet pack $project -c $configuration -o $outputPath
 }
 else {
-    dotnet pack $project -c $configurtion -o $outputPath --version-suffix $versionSuffix
+    dotnet pack $project -c $configuration -o $outputPath --version-suffix $versionSuffix
 }

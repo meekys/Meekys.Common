@@ -1,3 +1,3 @@
-Write-Host Write-Host -ForegroundColor Cyan "dotnet restore"
+Write-Host -ForegroundColor Cyan "dotnet restore"
 
 dotnet restore -v Minimal
