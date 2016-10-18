@@ -1,36 +1,43 @@
 {
-  "name": "Meekys.Common",
-  "version": "0.0.1-alpha-*",
-  "copyrigt": "Meekys (Sean Meechan)",
+    "name": "Meekys.Common",
+    "version": "0.0.1-*",
+    "copyrigt": "Meekys (Sean Meechan)",
+    
+    "buildOptions": {
+        "warningsAsErrors": true,
+        "debugType": "portable",
+        "preserveCompilationContext": true
+    },
 
-  "buildOptions": {
-    "warningsAsErrors": true,
-    "debugType": "portable",
-    "preserveCompilationContext": true
-  },
+    "dependencies": {
+    },
 
-  "dependencies": {
-  },
-  
-  "frameworks": {
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.1"
+    "frameworks": {
+        "netcoreapp1.0": {
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.1"
+                }
+            },
+            "imports": [
+                "dotnet5.6",
+                "dnxcore50",
+                "portable-net45+win8"
+            ]
         }
-      },
-      "imports": [
-        "dotnet5.6",
-        "dnxcore50",
-        "portable-net45+win8"
-      ]
+    },
+
+    "tools": { 
+    },
+
+    "tooling": {
+        "defaultNamespace": "Meekys.Common"
+    },
+
+    "packOptions": {
+        "summary": "Common library helper extentions",
+        "projectUrl": "https://github.com/meekys/Meekys.Common",
+        "licenseUrl": "https://github.com/meekys/Meekys.Common/blob/master/LICENSE.md"
     }
-  },
-  
-  "tools": {},
- 
-  "tooling": {
-    "defaultNamespace": "Meekys.Common"
-  }
 }
