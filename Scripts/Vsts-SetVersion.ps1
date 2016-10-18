@@ -1,3 +1,3 @@
-$date = Get-Date -Format "yyyyMMdd"
+$buildRevision = Get-Date -Format "yyyy.MMdd"
 
-./Scripts/SetVersion.ps1 "$env:VERSION_MAJOR.$env:VERSION_MINOR.$date"
+./Scripts/SetVersion.ps1 "$env:VERSION_MAJOR.$env:VERSION_MINOR.$buildRevision"

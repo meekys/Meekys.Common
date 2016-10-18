@@ -13,7 +13,7 @@ $project = ls project.json -recurse | `
 
 Write-Host -ForegroundColor Cyan "dotnet pack $project"
 
-if ($versionSuffix -eq $null) {
+if ("$versionSuffix" -eq "") {
     dotnet pack $project -c $configuration -o $outputPath
 }
 else {
