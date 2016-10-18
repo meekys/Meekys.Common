@@ -1,1 +1,1 @@
-./Scripts/SetVersion.ps1 $($env:VERSION_MAJOR).$($env:VERSION_MINOR).$($env:VERSION_PATCH)
+./Scripts/SetVersion.ps1 "$env:VERSION_MAJOR.$env:VERSION_MINOR.$env:VERSION_PATCH"
