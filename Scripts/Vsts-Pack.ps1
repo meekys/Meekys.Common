@@ -1,4 +1,4 @@
-$revision = ($env:BUILD_DEFINITIONVERSION -split "\.")[-1]
+$revision = ($env:BUILD_BUILDNUMBER -split "\.")[-1]
 $tag = if ($env:VERSION_TAG -ne $null) { "$($env:VERSION_TAG)$revision"}
 
 ./Scripts/Pack.ps1 `
