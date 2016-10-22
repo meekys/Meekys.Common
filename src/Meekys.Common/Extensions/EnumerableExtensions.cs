@@ -15,6 +15,16 @@ namespace Meekys.Common.Extensions
             return items;
         }
         
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> items, Action<T, int> body)
+        {
+            var index = 0;
+
+            foreach (var item in items)
+                body(item, index++);
+                
+            return items;
+        }
+        
         public static string Join(this IEnumerable<string> items, string separator)
         {
             return String.Join(separator, items.ToArray());
@@ -22,7 +32,7 @@ namespace Meekys.Common.Extensions
         
         public static string ToCsv<T>(this IEnumerable<T> items)
         {
-            return items.Select(x => x.ToString()).Join(",");
+            return items.Select(x => x.ToString()).Join(", ");
         }
     }
 }
