@@ -11,15 +11,7 @@ namespace Meekys.Common.Extensions
         public static bool HasCustomAttribute<T>(this MemberInfo member)
             where T : Attribute
         {
-            return member.CustomAttribute<T>() != null;
-        }
-        
-        public static T CustomAttribute<T>(this MemberInfo member)
-            where T : Attribute
-        {
-            return member.CustomAttributes
-                .OfType<T>()
-                .FirstOrDefault();
+            return member.GetCustomAttribute<T>() != null;
         }
     }
 }
