@@ -1,8 +1,8 @@
 # Meekys.Common
 
 #### Release
-![Latest release status](https://img.shields.io/vso/build/meekys/11ce538f-3922-4142-91f9-2600ded996bc/2.svg)
-![Latest release package](https://img.shields.io/nuget/v/Meeky.Common.svg)
+![Latest release status](https://img.shields.io/vso/build/meekys/11ce538f-3922-4142-91f9-2600ded996bc/3.svg)
+![Latest release package](https://img.shields.io/nuget/v/Meekys.Common.svg)
 
 #### Latest Commit
 ![Latest commit status](https://img.shields.io/vso/build/meekys/11ce538f-3922-4142-91f9-2600ded996bc/1.svg)
