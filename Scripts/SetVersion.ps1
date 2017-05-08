@@ -3,7 +3,7 @@ param (
     [string] $version
 )
 
-ls *.csproj -recurse | `
+ls src\*.csproj -recurse | `
     % {
         Write-Host -ForegroundColor Cyan "SetVersion $_"
 
