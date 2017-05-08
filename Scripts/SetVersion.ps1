@@ -10,7 +10,7 @@ ls src\*.csproj -recurse | `
         [xml]$project = gc $_ 
 
         $oldVersion = $project.Project.PropertyGroup.VersionPrefix
-        $newVersion = "$version-*"
+        $newVersion = "$version"
 
         $project.Project.PropertyGroup.VersionPrefix = $newVersion
 
