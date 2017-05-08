@@ -6,7 +6,7 @@ param (
     [string] $versionSuffix
 )
 
-$project = ls project.json -recurse | `
+$project = ls src\*.csproj -recurse | `
     ? {
         $_.Directory.Name -eq $projectName
     }
