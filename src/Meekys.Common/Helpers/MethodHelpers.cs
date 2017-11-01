@@ -15,17 +15,27 @@ namespace Meekys.Common.Helpers
             return expression.MethodInfo();
         }
 
-        public static MethodInfo GetMethodInfo<T1, TReturn>(Func<T1, TReturn> func, T1 unused1) 
+        public static MethodInfo GetMethodInfo<T1, TReturn>(Func<T1, TReturn> func, T1 unused1)
         {
             return func.GetMethodInfo();
         }
 
-        public static MethodInfo GetMethodInfo<T1, T2, TReturn>(Func<T1, T2, TReturn> func, T1 unused1, T2 unused2) 
+        public static MethodInfo GetMethodInfo<T1, T2, TReturn>(Func<T1, T2, TReturn> func, T1 unused1, T2 unused2)
         {
             return func.GetMethodInfo();
         }
 
-        public static MethodInfo GetMethodInfo<T1, T2, T3>(Action<T1, T2, T3> func, T1 unused1, T2 unused2, T3 unused3) 
+        public static MethodInfo GetMethodInfo<T>(Action<T> func, T unused)
+        {
+            return func.GetMethodInfo();
+        }
+
+        public static MethodInfo GetMethodInfo<T1, T2>(Action<T1, T2> func, T1 unused1, T2 unused2)
+        {
+            return func.GetMethodInfo();
+        }
+
+        public static MethodInfo GetMethodInfo<T1, T2, T3>(Action<T1, T2, T3> func, T1 unused1, T2 unused2, T3 unused3)
         {
             return func.GetMethodInfo();
         }

@@ -11,6 +11,11 @@ namespace Meekys.Common.Tests.Extensions
 {
     public class EnumerableExtensionTests
     {
+        private class TestClass
+        {
+            public string Name { get; set; }
+        }
+
         [Fact]
         public void ForEach()
         {
@@ -38,7 +43,8 @@ namespace Meekys.Common.Tests.Extensions
             var current = 0;
 
             // Act
-            var result = data.ForEach((item, index) => {
+            var result = data.ForEach((item, index) =>
+            {
                 // Assert
                 Assert.Equal(current, index); // index is 0 based
 
@@ -103,7 +109,7 @@ namespace Meekys.Common.Tests.Extensions
             // Arrange
             Assert.Equal(string.Empty, result);
         }
-
+        
         [Fact]
         public void ToCsv_With_Multiple_Items()
         {
@@ -117,6 +123,25 @@ namespace Meekys.Common.Tests.Extensions
             Assert.Equal("Items, In, A, List", result);
         }
 
+        [Fact]
+        public void ToCsv_With_Multiple_Items_And_Selector()
+        {
+            // Arrange
+            var data = new[]
+            {
+                new TestClass { Name = "Items" },
+                new TestClass { Name = "In" },
+                new TestClass { Name = "A" },
+                new TestClass { Name = "List" }
+            };
+
+            // Act
+            var result = data.ToCsv(x => x.Name);
+
+            // Arrange
+            Assert.Equal("Items, In, A, List", result);
+        }
+        
         [Fact]
         public void ToCsv_With_Single_Item()
         {

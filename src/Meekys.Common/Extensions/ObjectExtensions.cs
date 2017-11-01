@@ -11,7 +11,7 @@ namespace Meekys.Common.Extensions
         {
             return collection.Contains(item);
         }
-        
+
         public static bool In<T>(this T item, IEnumerable<T> collection)
         {
             return collection.Contains(item);
