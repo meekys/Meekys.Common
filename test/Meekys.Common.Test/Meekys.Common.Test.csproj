@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="dotnet-xunit" Version="2.2.0-preview2-build1029" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta*" />
   </ItemGroup>
 
 </Project>
