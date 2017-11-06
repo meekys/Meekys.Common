@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace Meekys.Common.Extensions
             }
 
             return string.Format(
+                CultureInfo.CurrentCulture,
                 "{0}<{1}>",
                 type.Name.Split('`').First(),
                 arguments.Select(a => a.GenericName()).ToCsv());

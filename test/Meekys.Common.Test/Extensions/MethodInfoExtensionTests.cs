@@ -12,6 +12,12 @@ namespace Meekys.Common.Tests.Extensions
 {
     public class MethodInfoExtensionTests
     {
+        [Browsable(true)]
+        [CategoryAttribute("Test")]
+        public int ItemWithAttribute { get; set; }
+
+        public int ItemWithoutAttribute { get; set; }
+
         [Fact]
         public void HasCustomAttribute()
         {
@@ -37,10 +43,5 @@ namespace Meekys.Common.Tests.Extensions
             // Assert
             Assert.False(result);
         }
-
-        [Browsable(true)]
-        [CategoryAttribute("Test")]
-        public int ItemWithAttribute { get; set; }
-        public int ItemWithoutAttribute { get; set; }
     }
 }

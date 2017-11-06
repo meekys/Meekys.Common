@@ -15,7 +15,7 @@ namespace Meekys.Common.Tests.Extensions
         public void GenericName_With_Single_Parameter()
         {
             // Arrange
-            var type = typeof(List<String>);
+            var type = typeof(List<string>);
 
             // Act
             var result = type.GenericName();
@@ -28,7 +28,7 @@ namespace Meekys.Common.Tests.Extensions
         public void GenericName_With_Multiple_Parameters()
         {
             // Arrange
-            var type = typeof(KeyValuePair<String, Object>);
+            var type = typeof(KeyValuePair<string, object>);
 
             // Act
             var result = type.GenericName();
@@ -41,7 +41,7 @@ namespace Meekys.Common.Tests.Extensions
         public void GenericName_With_NonGeneric()
         {
             // Arrange
-            var type = typeof(String);
+            var type = typeof(string);
 
             // Act
             var result = type.GenericName();
@@ -54,7 +54,7 @@ namespace Meekys.Common.Tests.Extensions
         public void GenericName_With_Nested_Types()
         {
             // Arrange
-            var type = typeof(KeyValuePair<String, List<Object>>);
+            var type = typeof(KeyValuePair<string, List<object>>);
 
             // Act
             var result = type.GenericName();

@@ -11,11 +11,6 @@ namespace Meekys.Common.Tests.Extensions
 {
     public class EnumerableExtensionTests
     {
-        private class TestClass
-        {
-            public string Name { get; set; }
-        }
-
         [Fact]
         public void ForEach()
         {
@@ -24,7 +19,8 @@ namespace Meekys.Common.Tests.Extensions
             var current = 0;
 
             // Act
-            var result = data.ForEach(item => {
+            var result = data.ForEach(item =>
+            {
                 current++;
 
                 // Assert
@@ -101,7 +97,7 @@ namespace Meekys.Common.Tests.Extensions
         public void Join_With_No_Items()
         {
             // Arrange
-            var data = new string[] {};
+            var data = Array.Empty<string>();
 
             // Act
             var result = data.Join("-");
@@ -109,7 +105,7 @@ namespace Meekys.Common.Tests.Extensions
             // Arrange
             Assert.Equal(string.Empty, result);
         }
-        
+
         [Fact]
         public void ToCsv_With_Multiple_Items()
         {
@@ -129,10 +125,10 @@ namespace Meekys.Common.Tests.Extensions
             // Arrange
             var data = new[]
             {
-                new TestClass { Name = "Items" },
-                new TestClass { Name = "In" },
-                new TestClass { Name = "A" },
-                new TestClass { Name = "List" }
+                new { Name = "Items" },
+                new { Name = "In" },
+                new { Name = "A" },
+                new { Name = "List" }
             };
 
             // Act
@@ -141,7 +137,7 @@ namespace Meekys.Common.Tests.Extensions
             // Arrange
             Assert.Equal("Items, In, A, List", result);
         }
-        
+
         [Fact]
         public void ToCsv_With_Single_Item()
         {
@@ -159,7 +155,7 @@ namespace Meekys.Common.Tests.Extensions
         public void ToCsv_With_No_Items()
         {
             // Arrange
-            var data = new string[] { };
+            var data = Array.Empty<string>();
 
             // Act
             var result = data.ToCsv();

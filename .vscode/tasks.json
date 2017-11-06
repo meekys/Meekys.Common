@@ -10,7 +10,8 @@
                 "/property:GenerateFullPaths=true"
             ],
             "isBuildCommand": true,
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "showOutput": "silent"
         }
     ]
 }
