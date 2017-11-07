@@ -49,7 +49,7 @@ namespace Meekys.Common.Tests.Extensions
 
             // Assert
             Assert.NotNull(memberExpression);
-            Assert.Equal(memberExpression.Member.Name, "Length");
+            Assert.Equal("Length", memberExpression.Member.Name);
         }
 
         [Fact]
@@ -76,7 +76,7 @@ namespace Meekys.Common.Tests.Extensions
 
             // Assert
             Assert.NotNull(methodInfo);
-            Assert.Equal(methodInfo.Name, "ToUpper");
+            Assert.Equal("ToUpper", methodInfo.Name);
         }
 
         [Fact]
@@ -104,7 +104,7 @@ namespace Meekys.Common.Tests.Extensions
 
             // Assert
             Assert.NotNull(propertyInfo);
-            Assert.Equal(propertyInfo.Name, "Length");
+            Assert.Equal("Length", propertyInfo.Name);
         }
 
         [Fact]
