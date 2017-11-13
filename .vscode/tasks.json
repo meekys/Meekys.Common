@@ -5,13 +5,20 @@
     "args": [],
     "tasks": [
         {
-            "taskName": "msbuild",
+            "taskName": "build",
             "args": [
                 "/property:GenerateFullPaths=true"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile",
             "showOutput": "silent"
-        }
+        },
+        {
+            "taskName": "test",
+            "args": [ ],
+            "isTestCommand": true,
+            "showOutput": "always",
+            "problemMatcher": "$msCompile"
+          }
     ]
 }

@@ -69,14 +69,14 @@ namespace Meekys.Common.Tests.Extensions
         {
             // Arrange
             var str = string.Empty;
-            Expression<Func<string>> expression = () => str.ToUpper();
+            Expression<Func<string>> expression = () => str.Trim();
 
             // Act
             var methodInfo = expression.MethodInfo();
 
             // Assert
             Assert.NotNull(methodInfo);
-            Assert.Equal("ToUpper", methodInfo.Name);
+            Assert.Equal("Trim", methodInfo.Name);
         }
 
         [Fact]
@@ -112,7 +112,7 @@ namespace Meekys.Common.Tests.Extensions
         {
             // Arrange
             var str = string.Empty;
-            Expression<Func<string>> expression = () => str.ToUpper();
+            Expression<Func<string>> expression = () => str.Trim();
 
             // Act + Assert
             var exception = Assert.Throws<ArgumentException>(() =>
