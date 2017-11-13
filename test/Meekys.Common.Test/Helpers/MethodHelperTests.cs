@@ -18,11 +18,11 @@ namespace Meekys.Common.Tests.Extensions
             var refString = string.Empty;
 
             // Act
-            var result = MethodHelpers.GetMethodInfo(() => refString.ToUpper());
+            var result = MethodHelpers.GetMethodInfo(() => refString.Trim());
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal("ToUpper", result.Name);
+            Assert.Equal("Trim", result.Name);
         }
 
         [Fact]

@@ -19,7 +19,8 @@ namespace Meekys.Common.Tests.Extensions
             var current = 0;
 
             // Act
-            var result = data.ForEach(item => {
+            var result = data.ForEach(item =>
+            {
                 current++;
 
                 // Assert
@@ -38,7 +39,8 @@ namespace Meekys.Common.Tests.Extensions
             var current = 0;
 
             // Act
-            var result = data.ForEach((item, index) => {
+            var result = data.ForEach((item, index) =>
+            {
                 // Assert
                 Assert.Equal(current, index); // index is 0 based
 
@@ -95,7 +97,7 @@ namespace Meekys.Common.Tests.Extensions
         public void Join_With_No_Items()
         {
             // Arrange
-            var data = new string[] {};
+            var data = Array.Empty<string>();
 
             // Act
             var result = data.Join("-");
@@ -118,6 +120,25 @@ namespace Meekys.Common.Tests.Extensions
         }
 
         [Fact]
+        public void ToCsv_With_Multiple_Items_And_Selector()
+        {
+            // Arrange
+            var data = new[]
+            {
+                new { Name = "Items" },
+                new { Name = "In" },
+                new { Name = "A" },
+                new { Name = "List" }
+            };
+
+            // Act
+            var result = data.ToCsv(x => x.Name);
+
+            // Arrange
+            Assert.Equal("Items, In, A, List", result);
+        }
+
+        [Fact]
         public void ToCsv_With_Single_Item()
         {
             // Arrange
@@ -134,7 +155,7 @@ namespace Meekys.Common.Tests.Extensions
         public void ToCsv_With_No_Items()
         {
             // Arrange
-            var data = new string[] { };
+            var data = Array.Empty<string>();
 
             // Act
             var result = data.ToCsv();

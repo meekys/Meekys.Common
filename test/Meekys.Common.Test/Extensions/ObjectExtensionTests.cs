@@ -37,7 +37,8 @@ namespace Meekys.Common.Tests.Extensions
             Assert.False(result);
         }
 
-        public void In_Enumerable() 
+        [Fact]
+        public void In_Enumerable()
         {
             // Arrange
             var item = "Test";
