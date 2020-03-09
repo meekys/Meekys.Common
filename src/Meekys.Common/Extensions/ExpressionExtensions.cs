@@ -11,6 +11,11 @@ namespace Meekys.Common.Extensions
     {
         public static MethodInfo MethodInfo(this Expression expression)
         {
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
             var method = expression.LambdaExpression().Body as MethodCallExpression;
 
             if (method == null)
@@ -23,6 +28,11 @@ namespace Meekys.Common.Extensions
 
         public static PropertyInfo PropertyInfo(this Expression expression)
         {
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
             var propertyInfo = expression.MemberExpression().Member as PropertyInfo;
 
             if (propertyInfo == null)
@@ -35,6 +45,11 @@ namespace Meekys.Common.Extensions
 
         public static LambdaExpression LambdaExpression(this Expression expression)
         {
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
             var lambdaExpression = expression as LambdaExpression;
 
             if (lambdaExpression == null)
@@ -47,6 +62,11 @@ namespace Meekys.Common.Extensions
 
         public static MemberExpression MemberExpression(this Expression expression)
         {
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
             var member = expression.LambdaExpression().Body as MemberExpression;
 
             if (member == null)
@@ -64,6 +84,11 @@ namespace Meekys.Common.Extensions
 
         public static Expression Convert(this Expression expression, Type type)
         {
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
             if (expression.Type == type)
             {
                 return expression;

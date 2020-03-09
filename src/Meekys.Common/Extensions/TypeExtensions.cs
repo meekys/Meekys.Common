@@ -11,6 +11,11 @@ namespace Meekys.Common.Extensions
     {
         public static string GenericName(this Type type)
         {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
+            }
+
             var arguments = type.GenericTypeArguments;
 
             if (!arguments.Any())
@@ -27,6 +32,11 @@ namespace Meekys.Common.Extensions
 
         public static bool IsNullable(this Type type)
         {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
+            }
+
             if (type.GenericTypeArguments.Length == 0)
             {
                 return false;
