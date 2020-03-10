@@ -35,7 +35,7 @@ namespace Meekys.Common.Tests.Extensions
             // Act + Assert
             var exception = Assert.Throws<ArgumentException>(() =>
                 expression.LambdaExpression());
-            Assert.Equal("Expected LambdaExpression\r\nParameter name: expression", exception.Message);
+            Assert.Equal("Expected LambdaExpression (Parameter 'expression')", exception.Message);
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace Meekys.Common.Tests.Extensions
             // Act + Assert
             var exception = Assert.Throws<ArgumentException>(() =>
                 expression.PropertyInfo());
-            Assert.Equal("Expected MemberExpression\r\nParameter name: expression", exception.Message);
+            Assert.Equal("Expected MemberExpression (Parameter 'expression')", exception.Message);
         }
 
         [Fact]
@@ -89,7 +89,7 @@ namespace Meekys.Common.Tests.Extensions
             // Act + Assert
             var exception = Assert.Throws<ArgumentException>(() =>
                 expression.MethodInfo());
-            Assert.Equal("Expected MethodCallExpression\r\nParameter name: expression", exception.Message);
+            Assert.Equal("Expected MethodCallExpression (Parameter 'expression')", exception.Message);
         }
 
         [Fact]
@@ -117,7 +117,7 @@ namespace Meekys.Common.Tests.Extensions
             // Act + Assert
             var exception = Assert.Throws<ArgumentException>(() =>
                 expression.PropertyInfo());
-            Assert.Equal("Expected MemberExpression\r\nParameter name: expression", exception.Message);
+            Assert.Equal("Expected MemberExpression (Parameter 'expression')", exception.Message);
         }
 
         [Fact]

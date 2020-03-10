@@ -9,6 +9,11 @@ namespace Meekys.Common.Extensions
     {
         public static IEnumerable<T> ForEach<T>(this IEnumerable<T> items, Action<T> body)
         {
+            if (items == null)
+            {
+                throw new ArgumentNullException(nameof(items));
+            }
+
             foreach (var item in items)
             {
                 body(item);
@@ -19,6 +24,11 @@ namespace Meekys.Common.Extensions
 
         public static IEnumerable<T> ForEach<T>(this IEnumerable<T> items, Action<T, int> body)
         {
+            if (items == null)
+            {
+                throw new ArgumentNullException(nameof(items));
+            }
+
             var index = 0;
 
             foreach (var item in items)
